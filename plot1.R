@@ -17,5 +17,7 @@ hist(as.numeric(df$Global_active_power), col="red",
      main = "Global Active Power")
 
 # Save plot to a png file
-dev.copy(png,"plot1.png",units="px",height=480,width=480)
+dev.copy(png,"plot1.png",units="px",height=480,width=480,bg="white")
+# white background was chosen for better visibility 
+# on github instead of  bg = "transparent" 
 dev.off()
