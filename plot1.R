@@ -11,13 +11,9 @@ names(df)<-strsplit(readLines("household_power_consumption.txt",n=1),";")[[1]]
 # Create column DT using POSIXct
 df$DT <- as.POSIXct(paste(df$Date, df$Time), format="%d/%m/%Y %H:%M:%S")
 
-# Create histogram
+# Create plot
+png(file = "plot1.png",units="px",height=480,width=480,bg="white")
 hist(as.numeric(df$Global_active_power), col="red", 
      xlab = "Global Active Power (kilowatts)", 
      main = "Global Active Power")
-
-# Save plot to a png file
-dev.copy(png,"plot1.png",units="px",height=480,width=480,bg="white")
-# white background was chosen for better visibility 
-# on github instead of  bg = "transparent" 
 dev.off()

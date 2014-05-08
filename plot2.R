@@ -13,12 +13,10 @@ df$DT <- as.POSIXct(paste(df$Date, df$Time), format="%d/%m/%Y %H:%M:%S")
 Sys.setlocale("LC_TIME", "English")
 
 # Create plot
+png(file = "plot2.png",units="px",height=480,width=480,bg="white")
 plot(df$DT, as.numeric(df$Global_active_power), 
      type="l", xlab="",
      ylab = "Global Active Power (kilowatts)"
      )
-
-# Save plot to a png file
-dev.copy(png,"plot2.png",units="px",height=480,width=480)
 dev.off()
 
